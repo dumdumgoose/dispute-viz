@@ -145,7 +145,7 @@ const GameGraph = ({ data, upTo }: GameGraphProps) => {
       })
       let steps: number[] = []
       claims.forEach((claim: any, i: number) => {
-        const node = nodes[Number(claim.position) - 1]
+        const node = nodes[!claim.position ? Number(claim.position) : Number(claim.position) - 1]
         node.active = true
         node.countered = claim.countered
         node.claims.push({ value: claim.claim, countered: claim.countered, position: claim.position })

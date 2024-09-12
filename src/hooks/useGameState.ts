@@ -18,7 +18,7 @@ const useDisputeGame = (address: string | null, upTo: number | undefined): { isF
       let res = await Promise.all([
         client.readContract({ ...contract, functionName: 'createdAt', args: [] }),
         client.readContract({ ...contract, functionName: 'rootClaim', args: [] }),
-        client.readContract({ ...contract, functionName: 'ABSOLUTE_PRESTATE', args: [] }),
+        client.readContract({ ...contract, functionName: 'absolutePrestate', args: [] }),
         client.readContract({ ...contract, functionName: 'claimDataLen', args: [] }),
         client.readContract({ ...contract, functionName: 'l2BlockNumber', args: [] }),
         client.readContract({ ...contract, functionName: 'status', args: [] })
